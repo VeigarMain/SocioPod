@@ -1,3 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+	margin: 0;
+	background: #222;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text {
+  margin-top: 120px;
+}
+.text h2 {
+  color: #fff;
+  font-size: 5rem;
+  cursor: context-menu;
+}
+
+
+
+.text span {
+  display: inline-block;
+}
+
+span:hover {
+  color: aqua;
+  transition: all .5s;
+}
+span.name {
+  color: aqua;
+}
+
+span.m-left {
+  margin-left: -10px;
+}
+
+
+
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: #7b68ee;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.cropped {
+  width: 150px; /* width of container */
+  height: 150px; /* height of container */
+  overflow: hidden;
+  border: 5px solid black;
+}
+
+.cropped img {
+  margin: -10px 0px 0px -180px;
+}
+
+
+footer {
+   
+  margin-top: auto;
+  background: #7b68ee;
+  width: 100%;
+  text-align: center;
+  height: 70px;
+  position: fixed;bottom:0;left:0;right:0;height:60px;
+}
+.footerborder {
+    border-width: 5px !important;
+    border-color: teal !important;
+}  
+
+.
+
+
+
+
+
+
+
+
+
 form.signup,
 form.login {
   margin-top: 50px;
