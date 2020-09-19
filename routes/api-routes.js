@@ -28,23 +28,9 @@ module.exports = function (app) {
     console.log(req.body.email);
     console.log(req.body.password);
     console.log(db.User);
-    db.User.create({email: req.body.email, password: req.body.password})
-      //{ fields: ['email'] })
-    // let's assume the default of isAdmin is false
-   // console.log(user.email); // 'alice123'
-    //console.log(user.password); // false
-    // console.log(req.body.email)
-    // console.log(req.body.password)
-    // db.User.create({
-    //   email: req.body.email,
-    //   password: req.body.password
-    // })
-
-      .then(() => {
-        // res.json(dbUser);
-        res.redirect(307, "/api/login");
-      //  console.log("from then", user.email);
-    //    console.log(user.password);
+    db.User.create({ email: req.body.email, password: req.body.password })
+.then(() => {
+    res.redirect(307, "/api/login");
       })
       .catch(err => {
         res.status(401).json(err);
