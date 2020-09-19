@@ -1,0 +1,21 @@
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar {
+    width: 100%;
+    overflow: auto;
+    background-color: #68ee;
+}
+
+.navbar a {
+    float: right;
+    text-align: center;
+    padding: 12px;
+    color: #444;
+    text-decoration: none;
+    
+
+}
