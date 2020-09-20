@@ -8,13 +8,16 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "build": "browserify favorites.js -o bundle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "bcryptjs": "2.4.3",
+    "browserify": "^16.5.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.16.1",
