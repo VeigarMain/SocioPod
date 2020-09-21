@@ -1,8 +1,21 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const bodyParser = require('body-parser')
 
+<<<<<<< HEAD
+module.exports = function (app) {
+
+  // parse application/x-www-form-urlencoded
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+
+  // parse application/json
+  app.use(bodyParser.json())
+=======
 module.exports = function(app) {
+>>>>>>> 75451e8ce088b8b8042ca1f1a506a8d64bc058af
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -29,8 +42,21 @@ module.exports = function(app) {
     console.log(req.body.password);
     console.log(db.User);
     db.User.create({ email: req.body.email, password: req.body.password })
+      //{ fields: ['email'] })
+      // let's assume the default of isAdmin is false
+      // console.log(user.email); // 'alice123'
+      //console.log(user.password); // false
+      // console.log(req.body.email)
+      // console.log(req.body.password)
+      // db.User.create({
+      //   email: req.body.email,
+      //   password: req.body.password
+      // })
+
       .then(() => {
         res.redirect(307, "/api/login");
+        //  console.log("from then", user.email);
+        //    console.log(user.password);
       })
       .catch(err => {
         res.status(401).json(err);
@@ -39,7 +65,10 @@ module.exports = function(app) {
         //console.log(user.password);
       });
   });
-
+  // Route to call api 
+  app.post("/profile", (req, res) => {
+    console.log(req.body);
+  })
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
