@@ -14,15 +14,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "bcryptjs": "2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.16.1",
     "handlebars": "^4.7.6",
+    "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
-    "passport": "^0.4.0",
+    "node": "^14.11.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "require": "^2.4.20",
     "sequelize": "^5.22.3",
+    "session": "^0.1.0",
     "sql": "^0.78.0"
   },
   "devDependencies": {
@@ -33,6 +38,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
+    "nodemon": "^2.0.4",
     "prettier": "^1.13.7"
   }
 }
