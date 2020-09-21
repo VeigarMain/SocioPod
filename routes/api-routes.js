@@ -3,6 +3,7 @@ const db = require("../models");
 const passport = require("../config/passport");
 const bodyParser = require('body-parser')
 
+<<<<<<< HEAD
 module.exports = function (app) {
 
   // parse application/x-www-form-urlencoded
@@ -12,6 +13,9 @@ module.exports = function (app) {
 
   // parse application/json
   app.use(bodyParser.json())
+=======
+module.exports = function(app) {
+>>>>>>> 75451e8ce088b8b8042ca1f1a506a8d64bc058af
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -50,14 +54,13 @@ module.exports = function (app) {
       // })
 
       .then(() => {
-        // res.json(dbUser);
         res.redirect(307, "/api/login");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
       .catch(err => {
         res.status(401).json(err);
-        console.log(err)
+        console.log(err);
         //console.log("from error", user.email);
         //console.log(user.password);
       });
