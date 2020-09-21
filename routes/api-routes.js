@@ -1,8 +1,17 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const bodyParser = require('body-parser')
 
 module.exports = function (app) {
+
+  // parse application/x-www-form-urlencoded
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+
+  // parse application/json
+  app.use(bodyParser.json())
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -24,27 +33,27 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup",(req, res) => {
+  app.post("/api/signup", (req, res) => {
     console.log(req.body.email);
     console.log(req.body.password);
     console.log(db.User);
-    db.User.create({email: req.body.email, password: req.body.password})
+    db.User.create({ email: req.body.email, password: req.body.password })
       //{ fields: ['email'] })
-    // let's assume the default of isAdmin is false
-   // console.log(user.email); // 'alice123'
-    //console.log(user.password); // false
-    // console.log(req.body.email)
-    // console.log(req.body.password)
-    // db.User.create({
-    //   email: req.body.email,
-    //   password: req.body.password
-    // })
+      // let's assume the default of isAdmin is false
+      // console.log(user.email); // 'alice123'
+      //console.log(user.password); // false
+      // console.log(req.body.email)
+      // console.log(req.body.password)
+      // db.User.create({
+      //   email: req.body.email,
+      //   password: req.body.password
+      // })
 
       .then(() => {
         // res.json(dbUser);
         res.redirect(307, "/api/login");
-      //  console.log("from then", user.email);
-    //    console.log(user.password);
+        //  console.log("from then", user.email);
+        //    console.log(user.password);
       })
       .catch(err => {
         res.status(401).json(err);
@@ -53,7 +62,10 @@ module.exports = function (app) {
         //console.log(user.password);
       });
   });
-
+  // Route to call api 
+  app.post("/profile", (req, res) => {
+    console.log(req.body);
+  })
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
