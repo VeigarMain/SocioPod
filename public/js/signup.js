@@ -53,14 +53,29 @@ $(document).ready(() => {
     })
       .then(res => {
         console.log(res);
-        // window.location.replace("/members");
+        window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
+  function signUpUser(email, password) {
+    $.post("/api/signup", {
+      email: email,
+      password: password
+    })
+      .then(() => {
+        window.location.replace("/members");
+        // If there's an error, log the error
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+});
+
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
-  }
-});
+  };
+
