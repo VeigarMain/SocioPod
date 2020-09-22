@@ -16,13 +16,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "bcryptjs": "2.4.3",
-<<<<<<< HEAD
     "body-parser": "^1.19.0",
     "express": "^4.17.0",
-=======
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
->>>>>>> 75451e8ce088b8b8042ca1f1a506a8d64bc058af
     "express-session": "^1.16.1",
     "handlebars": "^4.7.6",
     "mysql": "^2.18.1",
