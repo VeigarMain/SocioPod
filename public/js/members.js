@@ -6,11 +6,12 @@ $(document).ready(() => {
   });
   $("button").on("click", function (event) {
     event.preventDefault();
-    const one = "apple"
+    const int = $("#interest").val().trim().toLowerCase();
+    console.log(int)
     $.ajax({
       type: "POST",
       url: "/profile",
-      interstOne: one
+      interstOne: int
     })
   })
 });
