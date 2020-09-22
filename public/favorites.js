@@ -40,12 +40,13 @@ const options = {
 const network = new vis.Network(container, data, options);
 
 // Events
-network.on("click", e => {
+// eslint-disable-next-line prettier/prettier
+network.on("click", function (e) {
   if (e.nodes.length) {
     const node = nodes.get(e.nodes[0]);
     // Do something
     nodes.update(node);
-    console.log("hello");
+    console.log(this);
     // const axios = require("axios");
     // const arr = ["politics", "movies", "food"];
     // const get = item => axios({
