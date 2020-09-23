@@ -47,6 +47,7 @@ $(document).ready(() => {
     intTwo,
     intThree
   }) {
+    console.log("firstName:", firstName);
     $.post("/api/signup", {
       firstName: firstName,
       lastName: lastName,
@@ -63,24 +64,8 @@ $(document).ready(() => {
       })
       .catch(handleLoginErr);
   }
-
-  function signUpUser(email, password) {
-    $.post("/api/signup", {
-      email: email,
-      password: password
-    })
-      .then(() => {
-        window.location.replace("/members");
-        // If there's an error, log the error
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-});
-
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
-  };
-
+  }
+});

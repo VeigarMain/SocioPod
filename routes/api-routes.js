@@ -49,6 +49,7 @@ module.exports = function(app) {
     console.log("hello");
     console.log(req.body);
     console.log(db.User);
+    console.log(req.body.firstName);
     db.User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -59,7 +60,7 @@ module.exports = function(app) {
       intThree: req.body.intThree
     })
       .then(() => {
-        res.redirect(307, "/api/members");
+        res.redirect(307, "/members");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
