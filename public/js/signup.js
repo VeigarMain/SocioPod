@@ -47,6 +47,7 @@ $(document).ready(() => {
     intTwo,
     intThree
   }) {
+    console.log("firstName:", firstName);
     $.post("/api/signup", {
       firstName: firstName,
       lastName: lastName,
@@ -63,7 +64,6 @@ $(document).ready(() => {
       })
       .catch(handleLoginErr);
   }
-
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
