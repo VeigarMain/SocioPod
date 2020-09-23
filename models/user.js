@@ -16,9 +16,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true
-      }
+    //     validate: {
+
+      //   //   isEmail: true
+    //   //
     },
     // The password cannot be null
     password: {
@@ -32,14 +33,15 @@ module.exports = function (sequelize, DataTypes) {
     intTwo: {
       type: DataTypes.STRING,
       allowNull: false
-    },
+    // eslint-disable-next-line prettier/prettier
+    }, 
     intThree: {
       type: DataTypes.STRING,
       allowNull: false
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  User.prototype.validPassword = function (password) {
+  User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle

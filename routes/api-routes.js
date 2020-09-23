@@ -5,23 +5,35 @@ const bodyParser = require("body-parser");
 
 module.exports = function(app) {
   // parse application/x-www-form-urlencoded
-  app.use(bodyParser.urlencoded({
+  app.use(
+    bodyParser.urlencoded({
       extended: true
     })
   );
 
   // parse application/json
-  app.use(bodyParser.json())
+  app.use(bodyParser.json());
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
+  app.post(
+    "/api/login",
+    passport.authenticate("local", {
+      successRedirect: "/members",
+      failureRedirect: "/login"
+    })
+  );
+  // (req, res) => {
+  // Sending back a password, even a hashed password, isn't a good idea
+  // grab from database
+
+  // res.redirect("/")
+  /*  
+  res.json({
       email: req.user.email,
       id: req.user.id
-    });
-  });
+    });}  
+    */
 
   // app.get('/something', (req, res) => {
   //   db.User.findAll({
@@ -34,7 +46,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    console.log("hellow");
+    console.log("hello");
     console.log(req.body);
     console.log(db.User);
     db.User.create({
@@ -47,7 +59,7 @@ module.exports = function(app) {
       intThree: req.body.intThree
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect(307, "/api/members");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
@@ -58,7 +70,7 @@ module.exports = function(app) {
         //console.log(user.password);
       });
   });
-  // Route to call api 
+  // Route to call api
   app.post("/profile", (req, res) => {
     console.log(req);
     console.log("----------------------------");
@@ -67,7 +79,7 @@ module.exports = function(app) {
     console.log("----------------------------");
     console.log("----------------------------");
     console.log(res);
-  })
+  });
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
