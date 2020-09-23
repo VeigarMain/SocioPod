@@ -58,7 +58,9 @@ $(document).ready(() => {
     })
       .then(res => {
         console.log(res);
-        window.location.replace("/members");
+        window.location.replace(
+          "/members/:" + intOne + "/:" + intTwo + "/:" + intThree
+        );
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

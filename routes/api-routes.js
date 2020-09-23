@@ -4,7 +4,7 @@ const passport = require("../config/passport");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // parse application/x-www-form-urlencoded
   app.use(
     bodyParser.urlencoded({
@@ -38,7 +38,7 @@ module.exports = function(app) {
       intThree: req.body.intThree
     })
       .then(() => {
-        res.redirect(307, "/members");
+        res.redirect(307, "/members/:intOne/:intTwo/:intThree");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
@@ -49,30 +49,9 @@ module.exports = function(app) {
         //console.log(user.password);
       });
   });
-  app.post("/members", (req, res) => {
-    const axios = require("axios");
-    const arr = [req.body.intOne, req.body.intTwo, req.body.intThree];
-    const get = item => axios({
-        method: "GET",
-        headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
-        url:
-          "https://listen-api.listennotes.com/api/v2/search?q=" +
-          item +
-          "&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0"
-      }).then(res => {
-        for (let i = 0; i < res.data.results.length; i++) {
-          console.log("------------------------------------");
-          console.log(res.data.results[i].title_original);
-          console.log(res.data.results[i].image);
-          console.log(res.data.results[i].id);
-          console.log(res.data.results[i].listennotes_url);
-        }
-      });
-
-    //  arr.forEach(item, get(item))
-    for (let i = 0; i < arr.length; i++) {
-      get(arr[i]);
-    }
+  app.get("/members/:intOne/:intTwo/:intThree", (req, res) => {
+    console.log(req.params);
+    res.render("home");
   });
   // Route to call api
   app.post("/profile", (req, res) => {
