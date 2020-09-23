@@ -39,7 +39,7 @@ module.exports = function (app) {
       intThree: req.body.intThree
     })
       .then(() => {
-        res.redirect(307, "/members");
+        res.redirect(307, "/members/:intOne/:intTwo/:intThree");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
@@ -50,6 +50,7 @@ module.exports = function (app) {
         //console.log(user.password);
       });
   });
+<<<<<<< HEAD
   app.get("/members/:intOne/:intTwo/:intThree", (req, response) => {
     const axios = require("axios");
     const arr = [req.body.intOne, req.body.intTwo, req.body.intThree];
@@ -74,6 +75,11 @@ module.exports = function (app) {
     for (let i = 0; i < arr.length; i++) {
       get(arr[i]);
     }
+=======
+  app.get("/members/:intOne/:intTwo/:intThree", (req, res) => {
+    console.log(req.params);
+    res.render("home");
+>>>>>>> d871793109ad4fd37a4548d448e06cd9fb4ca672
   });
   // Route to call api
   app.post("/profile", (req, res) => {
