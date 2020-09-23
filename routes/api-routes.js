@@ -1,9 +1,11 @@
+const axios = require('axios');
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
 const bodyParser = require("body-parser");
 
-module.exports = function(app) {
+
+module.exports = function (app) {
   // parse application/x-www-form-urlencoded
   app.use(
     bodyParser.urlencoded({
@@ -23,28 +25,6 @@ module.exports = function(app) {
       failureRedirect: "/login"
     })
   );
-  // (req, res) => {
-  // Sending back a password, even a hashed password, isn't a good idea
-  // grab from database
-
-  // res.redirect("/")
-  /*  
-  res.json({
-      email: req.user.email,
-      id: req.user.id
-    });}  
-    */
-
-  // app.get('/something', (req, res) => {
-  //   db.User.findAll({
-  //   }).then(function(dbUser) {
-  //     res.json(dbUser);
-  //   })
-  // })
-
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     console.log("hello");
     console.log(req.body);
@@ -60,7 +40,7 @@ module.exports = function(app) {
       intThree: req.body.intThree
     })
       .then(() => {
-        res.redirect(307, "/members");
+        res.redirect(307, "/members/:intOne/:intTwo/:intThree");
         //  console.log("from then", user.email);
         //    console.log(user.password);
       })
@@ -70,6 +50,36 @@ module.exports = function(app) {
         //console.log("from error", user.email);
         //console.log(user.password);
       });
+  });
+  app.get("/members/:intOne/:intTwo/:intThree", async (req, res) => {
+    const result = await db.User.findOne({ where: 9 });
+    const arr = ["politics", "movies", "food"]
+    const get = (item) => axios({
+      method: 'GET',
+      headers: { 'X-ListenAPI-Key': '178f7b868c6e491392fce6436d12ac5a' }, // replace apicode with actual api key
+      url: 'https://listen-api.listennotes.com/api/v2/search?q=' + item + '&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0'
+    }).then((res) => {
+      // for (let i = 0; i < res.data.results.length; i++) {
+      //   console.log("------------------------------------")
+      //   console.log(res.data.results[i].title_original)
+      //   console.log(res.data.results[i].image)
+      //   console.log(res.data.results[i].id)
+      //   console.log(res.data.results[i].listennotes_url)
+      // }
+      return(res.data.results);
+    });
+    const emptyArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      const newResult = await get(arr[i])
+      emptyArr.push(...newResult);
+      
+    };
+    console.log(emptyArr);
+    res.status(200).json({results: emptyArr});
+    // console.log(result);
+    // console.log(req.params);
+
+    // res.render("home");
   });
   // Route to call api
   app.post("/profile", (req, res) => {
@@ -81,6 +91,10 @@ module.exports = function(app) {
     console.log("----------------------------");
     console.log(res);
   });
+
+
+
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();

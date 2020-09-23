@@ -1,1 +1,0 @@
-![InitialWireFrame](assets/initialwireframe.png)
