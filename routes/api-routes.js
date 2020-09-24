@@ -51,48 +51,45 @@ module.exports = function(app) {
       });
   });
   app.get("/members/:intOne/:intTwo/:intThree", async (req, res) => {
-    const result = await db.User.findOne({ where: 9 });
-    const arr = ["politics", "movies", "food"];
-    const get = item => axios({
-        method: "GET",
-        headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
-        url:
+    console.log(res);
+    console.log("---------------------");
+    console.log(req.user.intOne);
+    console.log(req.user.intTwo);
+    console.log(req.user.intThree);
+    // const result = await db.User.findOne({ where: 9 });
+    const arr = [];
+    arr.push(req.user.intOne, req.user.intTwo, req.user.intThree);
+    const get = item =>
+      axios({
+      method: "GET",
+      headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
+      url:
           "https://listen-api.listennotes.com/api/v2/search?q=" +
           item +
           "&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0"
-      }).then(res => {
-        // for (let i = 0; i < res.data.results.length; i++) {
-        //   console.log("------------------------------------")
-        //   console.log(res.data.results[i].title_original)
-        //   console.log(res.data.results[i].image)
-        //   console.log(res.data.results[i].id)
-        //   console.log(res.data.results[i].listennotes_url)
-        // }
-        return res.data.results;
-      });
+    }).then(res => {
+      // for (let i = 0; i < res.data.results.length; i++) {
+      //   console.log("------------------------------------")
+      //   console.log(res.data.results[i].title_original)
+      //   console.log(res.data.results[i].image)
+      //   console.log(res.data.results[i].id)
+      //   console.log(res.data.results[i].listennotes_url)
+      // }
+      return res.data.results;
+    });
     const emptyArr = [];
     for (let i = 0; i < arr.length; i++) {
       const newResult = await get(arr[i]);
       emptyArr.push(...newResult);
     }
-    console.log(emptyArr);
+    // console.log(emptyArr);
     res.status(200).json({ results: emptyArr });
-    // console.log(result);
-    // console.log(req.params);
+    // // console.log(result);
+    // // console.log(req.params);
 
-    // res.render("home");
+    // // res.render("home");
   });
-  // Route to call api
-  app.post("/profile", (req, res) => {
-    console.log(req);
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log(res);
-  });
-
+  
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
