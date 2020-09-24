@@ -2,12 +2,10 @@ $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/members/:intOne/:intTwo/:intThree").then(data => {
-      console.log(data);
-      // fixed members.js get route to append data from api to our members page!
+    console.log(data);
+    // fixed members.js get route to append data from api to our members page!
     const result = document.getElementById("result");
     data.results.map(item => {
-      console.log(item.audio);
-      console.log(item.title_original);
       const node = document.createElement("a");
       const textNode = document.createTextNode(item.audio);
       node.appendChild(textNode);
@@ -33,7 +31,6 @@ $(document).ready(() => {
       const description = document.createTextNode(item.description_original);
       newDescrip.appendChild(description);
       result.appendChild(newDescrip);
-
     });
   });
   // $("button").on("click", event => {
