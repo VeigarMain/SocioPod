@@ -30,21 +30,36 @@
 h4 {
 	@include font-base;
 }
+h3 {
+	background-color: #444;
+}
+
+h2 {
+	color: #222;
+}
+
 
 p {
 	@include font-base;
-	color: grey;
-	font-size: 0.7rem;
+	color:aqua;
+	font-size: 10px;
 }
 
+a {
+	color: aqua;
+}
+.result {
+	color: aqua;
+}
 body {
-	background-color: #eee;
+	background-color: #222;
 }
 
 .container {
 	width: 560px;
-	background-color: #fff;
+	background-color: #7b68ee;
 	margin: 0 auto;
+	color: aqua;
 }
 
 header,
@@ -87,4 +102,10 @@ article {
 
 .details {
 	padding: 8px 22px;
+}
+
+.holderdiv {
+	border: 5px solid white;
+	margin-bottom: 10px;
+	padding: 10px 5px 10px 5px;
 }

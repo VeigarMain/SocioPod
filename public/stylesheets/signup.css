@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 body {
-	margin: 0;
+	margin: 0px;
 	background: #222;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
@@ -17,8 +17,9 @@ html {
   color: #fff;
   font-size: 5rem;
   cursor: context-menu;
-}
+  text-align: justify;
 
+}
 
 
 .text span {
@@ -37,7 +38,11 @@ span.m-left {
   margin-left: -10px;
 }
 
-
+h3 {
+  color: aqua;
+  font-size: 35px;
+  white-space: nowrap;
+}
 
 
 .container {
@@ -60,11 +65,13 @@ header::after {
   padding: 10px 0;
 }
 
-nav {
-  float: right;
+.nav {
+  text-align: center;
+  margin: 0px;
+  
 }
 
-nav ul {
+/* nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -76,19 +83,19 @@ nav li {
   padding-top: 23px;
 
   position: relative;
-}
+} */
 
-nav a {
+/* nav a {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
-}
+} */
 
-nav a:hover {
+/* nav a:hover {
   color: #000;
-}
-
+} */
+/* 
 nav a::before {
   content: '';
   display: block;
@@ -100,18 +107,18 @@ nav a::before {
   width: 0%;
 
   transition: all ease-in-out 250ms;
-}
+} */
 
-nav a:hover::before {
+/* nav a:hover::before {
   width: 100%;
-}
+} */
 
-.cropped {
+/* .cropped {
   width: 150px; /* width of container */
-  height: 150px; /* height of container */
-  overflow: hidden;
-  border: 5px solid black;
-}
+  /* height: 150px; /* height of container */
+  /* overflow: hidden;
+  border: 5px solid black; */
+/* } */
 
 .cropped img {
   margin: -10px 0px 0px -180px;
@@ -136,15 +143,43 @@ img {
   color: aqua;
 }
 
-
-
-
-
-
-
-
-
 form.signup,
 form.login {
   margin-top: 50px;
+  padding: 40px 45px 40px 45px;
+}
+
+
+
+
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
 }
