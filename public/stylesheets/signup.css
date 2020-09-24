@@ -125,20 +125,16 @@ footer {
   width: 100%;
   text-align: center;
   height: 70px;
-  position: fixed;bottom:0;left:0;right:0;height:60px;
+  position: absolute;
 }
 .footerborder {
     border-width: 5px !important;
     border-color: teal !important;
 }  
 
-<<<<<<< HEAD
 img {
   color: aqua;
 }
-=======
-
->>>>>>> 0b5bcf5cceeaf2d702388f13191fe667faef5143
 
 
 
