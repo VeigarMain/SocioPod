@@ -5,15 +5,18 @@ $(document).ready(() => {
     console.log(data);
     // fixed members.js get route to append data from api to our members page!
     const result = document.getElementById("result");
+    // eslint-disable-next-line array-callback-return
     data.results.map(item => {
-<<<<<<< HEAD
-=======
       const newDiv = document.createElement("div");
-      const addCard = document.createTextNode(item.audio + item.title_original + item.description_original + item.image);
+      const addCard = document.createTextNode(
+        item.audio +
+          item.title_original +
+          item.description_original +
+          item.image
+      );
       newDiv.appendChild(addCard);
 
 
->>>>>>> 1d25ff2d0502bedc5c3135e4d18be03fddce47da
       const node = document.createElement("a");
       const textNode = document.createTextNode(item.audio);
       const newElement = document.createElement("div");
@@ -41,17 +44,8 @@ $(document).ready(() => {
       const newDescrip = document.createElement("p");
       const description = document.createTextNode(item.description_original);
       newDescrip.appendChild(description);
-<<<<<<< HEAD
-      result.appendChild(newDescrip);
-=======
       newElement.appendChild(newDescrip);
       result.appendChild(newElement);
-
-
-
-
-
->>>>>>> 1d25ff2d0502bedc5c3135e4d18be03fddce47da
     });
   });
   // $("button").on("click", event => {
