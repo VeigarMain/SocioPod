@@ -12,7 +12,7 @@ $(document).ready(() => {
       const textNode = document.createTextNode(item.audio);
       node.appendChild(textNode);
       node.href = item.audio;
-
+       
       // This is for showing the title of the specific url
       const newTitle = document.createElement("p");
       const textTitle = document.createTextNode(item.title_original);
@@ -22,9 +22,9 @@ $(document).ready(() => {
       const br = document.createElement("br");
       node.appendChild(br);
       result.appendChild(node);
-
       const imgDiv = document.createElement("div");
       const newImg = document.createElement("img");
+      
       newImg.src = item.image;
       imgDiv.appendChild(newImg);
       result.appendChild(imgDiv);

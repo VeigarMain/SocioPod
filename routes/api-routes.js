@@ -53,7 +53,7 @@ module.exports = function (app) {
   });
   app.get("/members/:intOne/:intTwo/:intThree", async (req, res) => {
     const result = await db.User.findOne({ where: 9 });
-    const arr = ["politics", "movies", "food"]
+    const arr = ["cooking", "travel", "sports"];
     const get = (item) => axios({
       method: 'GET',
       headers: { 'X-ListenAPI-Key': '178f7b868c6e491392fce6436d12ac5a' }, // replace apicode with actual api key
@@ -70,7 +70,7 @@ module.exports = function (app) {
     });
     const emptyArr = [];
     for (let i = 0; i < arr.length; i++) {
-      const newResult = await get(arr[i])
+      const newResult = await get(arr[i]);
       emptyArr.push(...newResult);
       
     };
