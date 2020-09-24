@@ -51,8 +51,14 @@ module.exports = function(app) {
       });
   });
   app.get("/members/:intOne/:intTwo/:intThree", async (req, res) => {
-    const result = await db.User.findOne({ where: 9 });
-    const arr = ["politics", "movies", "food"];
+    console.log(res);
+    console.log("---------------------");
+    console.log(req.user.intOne);
+    console.log(req.user.intTwo);
+    console.log(req.user.intThree);
+    // const result = await db.User.findOne({ where: 9 });
+    const arr = [];
+    arr.push(req.user.intOne, req.user.intTwo, req.user.intThree);
     const get = item =>
       axios({
       method: "GET",
@@ -76,24 +82,14 @@ module.exports = function(app) {
       const newResult = await get(arr[i]);
       emptyArr.push(...newResult);
     }
-    console.log(emptyArr);
+    // console.log(emptyArr);
     res.status(200).json({ results: emptyArr });
-    // console.log(result);
-    // console.log(req.params);
+    // // console.log(result);
+    // // console.log(req.params);
 
-    // res.render("home");
+    // // res.render("home");
   });
-  // Route to call api
-  app.post("/profile", (req, res) => {
-    console.log(req);
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log("----------------------------");
-    console.log(res);
-  });
-
+  
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();

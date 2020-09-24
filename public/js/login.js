@@ -34,6 +34,13 @@ $(document).ready(() => {
       })
       .catch(err => {
         console.log(err);
-      });
+      })
+      .bind("submit", sendMember(emailInput));
+  }
+
+  function sendMember(emailInput) {
+    $.post("/members/:intOne/:intTwo/:intThree", {
+      email: emailInput.val().trim()
+    });
   }
 });
