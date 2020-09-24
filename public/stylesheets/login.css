@@ -24,7 +24,7 @@ html {
 
 .text span {
   display: inline-block;
-  font-size: 18px;
+  font-size: 30px;
 }
 
 span:hover {
@@ -60,7 +60,7 @@ header::after {
 
 .logo {
   float: left;
-  padding: 10px 0;
+  padding: 40px 0;
 }
 
 nav {
