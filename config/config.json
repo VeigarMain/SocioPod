@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "yankees",
+<<<<<<< HEAD
+    "password": "Ht208476",
+=======
+    "password": "password",
+>>>>>>> 3671f8b23b24440006ab8ce692720e3219bda25b
     "database": "sociopods",
     "host": "127.0.0.1",
     "dialect": "mysql"

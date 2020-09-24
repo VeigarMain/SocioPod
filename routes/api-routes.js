@@ -89,7 +89,6 @@ module.exports = function (app) {
 
     // // res.render("home");
   });
-
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -110,4 +109,5 @@ module.exports = function (app) {
       });
     }
   });
-};
+
+
