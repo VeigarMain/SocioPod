@@ -9,6 +9,8 @@ $(document).ready(() => {
 
       const bigDiv = document.createElement("div");
       bigDiv.classList.add("card");
+      bigDiv.classList.add("border-dark");
+      bigDiv.classList.add("mb-3");
 
       const img = document.createElement("img");
       img.classList.add("card-img-top");
@@ -26,8 +28,8 @@ $(document).ready(() => {
       littleDiv.append(title);
 
       const description = document.createElement("p");
-      title.classList.add("card-text");
-      const descText = document.createTextNode(item.description_highlighted);
+      description.classList.add("card-text");
+      const descText = document.createTextNode(item.description_original);
       description.appendChild(descText);
       littleDiv.append(description);
 
@@ -44,7 +46,7 @@ $(document).ready(() => {
 
       const button2 = document.createElement("a");
       button2.classList.add("btn");
-      button2.classList.add("btn-primary");
+      button2.classList.add("btn-warning");
       const target2 = document.createAttribute("target");
       target2.value = "_blank";
       button2.setAttributeNode(target2);
@@ -54,54 +56,21 @@ $(document).ready(() => {
       button2.appendChild(button2Text);
       littleDiv.append(button2);
 
+      const button3 = document.createElement("a");
+      button3.classList.add("btn");
+      button3.classList.add("btn-success");
+      const button3Text = document.createTextNode("Like!");
+      button3.appendChild(button3Text);
+      littleDiv.append(button3);
+
+      const button4 = document.createElement("a");
+      button4.classList.add("btn");
+      button4.classList.add("btn-danger");
+      const button4Text = document.createTextNode("Dislike!");
+      button4.appendChild(button4Text);
+      littleDiv.append(button4);
+
       result.append(bigDiv);
-
-
-
-      const newDiv = document.createElement("div");
-      const addCard = document.createTextNode(item.audio + item.title_original + item.description_original + item.image);
-      newDiv.appendChild(addCard);
-
-
-
-      const node = document.createElement("a");
-      const textNode = document.createTextNode(item.audio);
-      const newElement = document.createElement("div");
-      newElement.classList.add("holderdiv");
-      node.appendChild(textNode);
-      node.href = item.audio;
-
-      // this is for making cards for the specific podcast with descriptions and img...
-      const newTitle = document.createElement("h2");
-      // This is for showing the title of the specific url
-      const textTitle = document.createTextNode(item.title_original);
-      newTitle.appendChild(textTitle);
-      newElement.appendChild(newTitle);
-      // const audio = `<p>${item[0].audio}</p>`;
-      const br = document.createElement("br");
-      node.appendChild(br);
-      newElement.appendChild(node);
-      const imgDiv = document.createElement("div");
-      const newImg = document.createElement("img");
-
-      newImg.src = item.image;
-      imgDiv.appendChild(newImg);
-      newElement.appendChild(imgDiv);
-
-      const newDescrip = document.createElement("p");
-      const description = document.createTextNode(item.description_original);
-      newDescrip.appendChild(description);
-
-      result.appendChild(newDescrip);
-
-      newElement.appendChild(newDescrip);
-      result.appendChild(newElement);
-
-
-
-
-
-
     });
   });
 });

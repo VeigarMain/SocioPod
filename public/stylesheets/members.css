@@ -21,8 +21,26 @@
 }
 
 .card {
-	width: 18rem;
+	width: 90%;
 	margin: 10px;
+	margin: 0 auto;
+}
+
+.card-body {
+	background-color: #444;
+}
+
+.card-text {
+	height: 100px;
+     /* white-space: nowrap; */
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+a.btn {
+	margin: 10px !important;
+	color: #444 !important;
+	background-color: whitesmoke;
 }
 
 @mixin font-base {
@@ -46,8 +64,8 @@ h2 {
 
 p {
 	@include font-base;
-	color:aqua;
-	font-size: 10px;
+	color: whitesmoke;
+	/* font-size: 10px; */
 }
 
 a {
@@ -55,6 +73,7 @@ a {
 }
 .result {
 	color: aqua;
+
 }
 body {
 	background-color: #222;
