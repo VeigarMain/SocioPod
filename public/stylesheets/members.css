@@ -1,7 +1,7 @@
 .abs-center-x {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 header {
@@ -14,32 +14,31 @@ header {
 	content: '';
 	display: table;
 	clear: both;
-  }
-  
-  .logo {
+}
+
+.logo {
 	float: left;
 	padding: 10px 0;
-  }
-  
-  .nav {
+}
+
+.nav {
 	text-align: center;
 	margin: 10px;
-	
-  }
+}
 
-  nav ul {
+nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-  }
-  
-  nav li {
+}
+
+nav li {
 	display: inline-block;
 	margin-left: 70px;
 	padding-top: 23px;
 
 	position: relative;
-  }
+}
 
 .card {
 	width: 90%;
@@ -53,9 +52,9 @@ header {
 
 .card-text {
 	height: 100px;
-     /* white-space: nowrap; */
-     overflow: hidden;
-     text-overflow: ellipsis;
+	/* white-space: nowrap; */
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 a.btn {
@@ -82,7 +81,6 @@ h2 {
 	color: #222;
 }
 
-
 p {
 	@include font-base;
 	color: whitesmoke;
@@ -94,16 +92,15 @@ a {
 	color: aqua;
 	font-size: 18px;
 }
- a:hover {
-	color:  #444;
+a:hover {
+	color: #444;
 }
 .result {
 	color: aqua;
-
 }
 body {
-	background: rgb(124,31,233);
-	background: radial-gradient(circle, rgba(124,31,233,1) 32%, rgba(121,0,133,1) 100%);
+	background: rgb(124, 31, 233);
+	background: radial-gradient(circle, rgba(124, 31, 233, 1) 32%, rgba(121, 0, 133, 1) 100%);
 }
 
 .container {
@@ -112,7 +109,6 @@ body {
 	margin: 0 auto;
 	color: aqua;
 }
-
 
 section {
 	position: fixed;
