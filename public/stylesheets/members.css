@@ -5,11 +5,12 @@
 }
 
 header {
-	background: rgb(124, 31, 233);
-	background: radial-gradient(circle, rgba(124, 31, 233, 1) 32%, rgba(121, 0, 133, 1) 100%);
-}
-
-header::after {
+	background: rgb(124,31,233);
+	background: radial-gradient(circle, rgba(124,31,233,1) 32%, rgba(121,0,133,1) 100%);
+	margin-bottom: 20px;
+  }
+  
+  header::after {
 	content: '';
 	display: table;
 	clear: both;
