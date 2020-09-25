@@ -11,20 +11,21 @@ html {
   scroll-behavior: smooth;
 }
 
-.text {
-  margin-top: 120px;
-}
+/* .text {
+  margin-top: 10px;
+} */
 .text h2 {
   color: #fff;
-  font-size: 5rem;
+  font-size: 7rem;
   cursor: context-menu;
-  text-align: justify;
+  text-align: right;
 
 }
 
 
 .text span {
   display: inline-block;
+  font-size: 30px;
 }
 
 span:hover {
@@ -41,6 +42,7 @@ span.m-left {
 
 h3 {
   color: aqua;
+  text-align: center;
   font-size: 35px;
   white-space: nowrap;
 }

@@ -11,10 +11,9 @@ html {
   scroll-behavior: smooth;
 }
 
-.text {
-  margin-top: 120px;
-}
+
 .text h2 {
+  margin-top: 100px;
   color: #fff;
   font-size: 8rem;
   cursor: context-menu;
@@ -118,6 +117,10 @@ nav a:hover::before {
 
 .cropped img {
   margin: -10px 0px 0px -180px;
+}
+
+.btn:hover{
+  background-color: aqua;
 }
 
 
