@@ -41,8 +41,8 @@ span.m-left {
 }
 
 header {
-	background: rgb(124, 31, 233);
-	background: radial-gradient(circle, rgba(124, 31, 233, 1) 32%, rgba(121, 0, 133, 1) 100%);
+background: rgb(124,31,233);
+background: radial-gradient(circle, rgba(124,31,233,1) 32%, rgba(121,0,133,1) 100%);
 }
 
 header::after {
@@ -139,7 +139,7 @@ footer {
 	margin-right: 6rem;
 }
 
-. form.signup,
+form.signup,
 form.login {
 	margin-top: 50px;
 }
