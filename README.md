@@ -12,10 +12,10 @@ This Application will allow the user to create an account in which they can then
 * [Tests](#tests)
 * [Questions](#questions)
 ## Installation
-To installrun the following command:
+To install run the following command:
 ``` npm i ```
 ## Use
-User who wants to see Podcastes 
+User who wants to see Podcastes based of the intrestes they choose 
 ## License
 This project is licensed under MIT license.
 ## Contribution 
