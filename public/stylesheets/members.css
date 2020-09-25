@@ -20,6 +20,11 @@
 
 }
 
+.card {
+	width: 18rem;
+	margin: 10px;
+}
+
 @mixin font-base {
 	padding: 0;
 	margin: 0;
