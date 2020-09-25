@@ -9,7 +9,7 @@ $(document).ready(() => {
     data.results.map(item => {
       const bigDiv = document.createElement("div");
       bigDiv.classList.add("card");
-      bigDiv.classList.add("border-dark");
+      bigDiv.classList.add("border-light");
       bigDiv.classList.add("mb-3");
 
       const img = document.createElement("img");
