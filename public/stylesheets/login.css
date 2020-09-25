@@ -132,9 +132,13 @@ footer {
   position: fixed;bottom:0;left:0;right:0;height:60px;
 }
 .footerborder {
-    border-width: 5px !important;
+    border-width: 10px !important;
     border-color: teal !important;
 }  
+
+.social-media a{
+  margin-right: 6rem;
+}
 
 .
 
