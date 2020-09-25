@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
 body {
 	margin: 0;
 	background: rgb(0, 0, 0);
@@ -27,6 +28,7 @@ span:hover {
 	color: aqua;
 	transition: all .5s;
 }
+
 span.name {
 	color: aqua;
 }
@@ -41,8 +43,8 @@ span.m-left {
 }
 
 header {
-background: rgb(124,31,233);
-background: radial-gradient(circle, rgba(124,31,233,1) 32%, rgba(121,0,133,1) 100%);
+	background: rgb(124, 31, 233);
+	background: radial-gradient(circle, rgba(124, 31, 233, 1) 32%, rgba(121, 0, 133, 1) 100%);
 }
 
 header::after {
@@ -103,8 +105,10 @@ nav a:hover::before {
 }
 
 .cropped {
-	width: 150px; /* width of container */
-	height: 150px; /* height of container */
+	width: 150px;
+	/* width of container */
+	height: 150px;
+	/* height of container */
 	overflow: hidden;
 	border: 5px solid black;
 }
@@ -130,6 +134,7 @@ footer {
 	right: 0;
 	height: 60px;
 }
+
 .footerborder {
 	border-width: 10px !important;
 	border-color: teal !important;
