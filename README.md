@@ -31,4 +31,3 @@ Run the following command:
 ## Contact 
 ahmedyrayan2020@gmail.com , mjstalzer@gmail.com , Jbaked12@gmail.com , 
 ##
-GitHub account:  https://github.com/@rahmedy  @mjstalzer
