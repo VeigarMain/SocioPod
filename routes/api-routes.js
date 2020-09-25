@@ -60,22 +60,15 @@ module.exports = function(app) {
     const arr = [];
     arr.push(req.user.intOne, req.user.intTwo, req.user.intThree);
     const get = item => axios({
-        method: "GET",
-        headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
-        url:
+      method: "GET",
+      headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
+      url:
           "https://listen-api.listennotes.com/api/v2/search?q=" +
           item +
           "&sort_by_date=0&type=episode&offset=0&len_min=10&len_max=30&genre_ids=68%2C82&published_before=1580172454000&published_after=0&only_in=title%2Cdescription&language=English&safe_mode=0"
-      }).then(res => {
-        // for (let i = 0; i < res.data.results.length; i++) {
-        //   console.log("------------------------------------")
-        //   console.log(res.data.results[i].title_original)
-        //   console.log(res.data.results[i].image)
-        //   console.log(res.data.results[i].id)
-        //   console.log(res.data.results[i].listennotes_url)
-        // }
-        return res.data.results;
-      });
+    }).then(res => {
+      return res.data.results;
+    });
     const emptyArr = [];
     for (let i = 0; i < arr.length; i++) {
       const newResult = await get(arr[i]);
@@ -93,20 +86,4 @@ module.exports = function(app) {
     req.logout();
     res.redirect("/");
   });
-
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", (req, res) => {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
-  });
-
-}
+};
