@@ -28,6 +28,7 @@ Run the following command:
 ``` npm test ```
 
 
-Contact ahmedyrayan2020@gmail.com
+## Contact 
+ahmedyrayan2020@gmail.com , mjstalzer@gmail.com , Jbaked12@gmail.com , 
 ##
-GitHub account:  https://github.com/@rahmedy
+GitHub account:  https://github.com/@rahmedy  @mjstalzer
