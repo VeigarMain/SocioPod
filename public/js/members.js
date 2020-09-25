@@ -5,9 +5,15 @@ $(document).ready(() => {
     console.log(data);
     // fixed members.js get route to append data from api to our members page!
     const result = document.getElementById("result");
+    // eslint-disable-next-line array-callback-return
     data.results.map(item => {
       const newDiv = document.createElement("div");
-      const addCard = document.createTextNode(item.audio + item.title_original + item.description_original + item.image);
+      const addCard = document.createTextNode(
+        item.audio +
+          item.title_original +
+          item.description_original +
+          item.image
+      );
       newDiv.appendChild(addCard);
 
 
@@ -40,11 +46,6 @@ $(document).ready(() => {
       newDescrip.appendChild(description);
       newElement.appendChild(newDescrip);
       result.appendChild(newElement);
-
-
-
-
-
     });
   });
   // $("button").on("click", event => {

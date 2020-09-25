@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="stylesheets/contact.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/adjustSize.css">
+
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/eb630ddf94.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<header>
+    <div class="container">
+        <img width="300px" height="300px" src="/assets/neon.png" />
+        <h1 class="logo"> </h1>
+        <nav>
+            <div class="container main-info-section">
+                <div class="text">
+                    <h2>
+                        <span>S</span>
+                        <span class="m-left">O</span>
+                        <span class="m-left">C</span>
+                        <span>I</span>
+                        <span class="m-left">O</span>
+                        <span class="m-left">P</span>
+                        <span class="name">O</span>
+                        <span class="name">D</span>
+                        <span class="name">S</span>
+                    </h2>
+                    <!-- add some new styling with different color schemes -->
+</header>
+
+<body>
+
+    <h1>About The Creators</h1>
+
+
+    <div class="main" id="section1">
+        <p>---------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <a href="#section2">
+            <button type="button" class="btn btn-default btn-circle btn-xl">Rayan
+            </button>
+        </a>
+
+        <a href="#section3">
+            <button type="button" class="btn btn-default btn-circle btn-xl">Jake
+            </button>
+        </a>
+
+        <a href="#section4">
+            <button type="button" class="btn btn-default btn-circle btn-xl">Matthew
+            </button>
+        </a>
+
+        <a href="#section5">
+            <button type="button" class="btn btn-default btn-circle btn-xl">Brian
+            </button>
+        </a>
+
+        <h3>Click On Any Of The Names To Know More About The Developer</h3>
+
+    </div>
+
+
+    <div class="main" id="section2">
+        <h2>Rayan Ahmedy </h2>
+        <a href="#section1">Go back to Top</a>
+
+        <p>Advanced Full-Stack Developer with a strong interest in problem solving and creating innovative solutions. I
+            always put a valuable meaning behind all my work.</p>
+    </div>
+
+
+    <div class="main" id="section3">
+        <h2>Jake Battaglia</h2>
+        <a href="#section1">Go back to Top</a>
+        <p>Hello everyone, I am Jake Battaglia. Welcome to my portfolio page! I recently just got into coding, to be exact, about two months ago. I am currently enrolled 
+            as a student at Georgia Tech's programming bootcamp, part time cohort. I am still honing my skills in and trying to learn as much as I can, but as time goes on 
+            and I continue to climb the mountain that is web development, I see myself becoming a JR Developer at a company when I finish my bootcamp! Other than learning how to code, I love spending time with my beautiful fiance and our dog! 
+            I think it's safe to say I love video games, I hope to one day learn 
+            how to make similar games like League of Legends, or even work for their company one day!"</p>
+    </div>
+
+    <div class="main" id="section4">
+        <h2>Section 4</h2>
+        <a href="#section1">Go back to Top</a>
+        <p>Advanced Full-Stack Developer with a strong interest in problem solving and creating innovative solutions. I
+            always put a valuable meaning behind all my work.</p>
+    </div>
+
+    <div class="main" id="section5">
+        <h2>Section 5</h2>
+        <a href="#section1">Go Back to Top</a>
+        <p>Advanced Full-Stack Developer with a strong interest in problem solving and creating innovative solutions. I
+            always put a valuable meaning behind all my work.</p>
+    </div>
+
+
+    <!-- <div class="buttons">
+    <button type="button" class="btn btn-default btn-circle btn-xl">Matthew
+    </button>
+    <button type="button" class="btn btn-default btn-circle btn-xl">Jake
+    </button>
+    <button type="button" class="btn btn-default btn-circle btn-xl">Brian
+    </button>
+    <button type="button" class="btn btn-default btn-circle btn-xl">Rayan</button>
+</div> -->
+
+
+
+
+    <!-- <div id="bubbles"></div> -->
+    <!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+    <script>
+        var nodes = new vis.DataSet([{
+                label: "Rayan Ahmedy"
+            },
+            {
+                label: "Matthew Stalzer"
+            },
+            {
+                label: "Brian Abedi"
+            },
+            {
+                label: "Jake Battaglia"
+            },
+
+
+        ]);
+        var edges = new vis.DataSet();
+
+        var container = document.getElementById('bubbles');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+
+        var options = {
+            nodes: {
+                borderWidth: 0,
+                shape: "circle",
+                color: {
+                    background: '#F92C55',
+                    highlight: {
+                        background: 'purple',
+                        border: 'aqua'
+                    }
+                },
+                font: {
+                    color: '#fff'
+                }
+            },
+            physics: {
+                stabilization: false,
+                minVelocity: 0.01,
+                solver: "repulsion",
+                repulsion: {
+                    nodeDistance: 80
+
+                }
+            }
+        };
+        var network = new vis.Network(container, data, options);
+
+
+
+        // Events
+        network.on("click", function (e) {
+            if (e.nodes.length) {
+                var node = nodes.get(e.nodes[0]);
+                // Do something
+                nodes.update(node);
+            }
+            console.log("hello")
+        });
+
+        container.on("mouse-wheel", function (event) {
+            // prevents zooming with the mouse-wheel event
+            event.stopPropagation();
+        });
+    </script> -->
+</body>
+
+</html>
