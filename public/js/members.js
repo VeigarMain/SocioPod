@@ -5,8 +5,8 @@ $(document).ready(() => {
     console.log(data);
     // fixed members.js get route to append data from api to our members page!
     const result = document.getElementById("result");
+    // eslint-disable-next-line array-callback-return
     data.results.map(item => {
-
       const bigDiv = document.createElement("div");
       bigDiv.classList.add("card");
       bigDiv.classList.add("border-dark");

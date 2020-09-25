@@ -4,7 +4,7 @@ const db = require("../models");
 const passport = require("../config/passport");
 const bodyParser = require("body-parser");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // parse application/x-www-form-urlencoded
   app.use(
     bodyParser.urlencoded({
@@ -59,8 +59,7 @@ module.exports = function (app) {
     // const result = await db.User.findOne({ where: 9 });
     const arr = [];
     arr.push(req.user.intOne, req.user.intTwo, req.user.intThree);
-    const get = item =>
-      axios({
+    const get = item => axios({
         method: "GET",
         headers: { "X-ListenAPI-Key": "178f7b868c6e491392fce6436d12ac5a" }, // replace apicode with actual api key
         url:
