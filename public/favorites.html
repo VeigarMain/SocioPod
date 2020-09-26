@@ -2,99 +2,47 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>SocioPods</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="stylesheets/members.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/eb630ddf94.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 <header>
-  <div class="container">
-
-    <img width="200px" height="200px" src="assets/neon.png" />
-
-    <h1 class="logo"></h1>
-
-    <nav>
-      <div class="container main-info-section">
-        <div class="text">
-          <h2>
-            <span>S</span>
-            <span class="m-left">O</span>
-            <span class="m-left">C</span>
-            <span>I</span>
-            <span class="m-left">O</span>
-            <span class="m-left">P</span>
-            <span class="name">O</span>
-            <span class="name">D</span>
-            <span class="name">S</span>
-            <!-- add some new styling with different color schemes -->
-            <ul>
-              <li><a href="#">Favorites</a></li>
-              <li><a href="#">Top Podcasts</a></li>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-    </nav>
-  </div>
+  <img width="200px" height="200px" src="assets/neon.png" />
+  <h1 class="logo"></h1>
+  <nav>
+<!--       <div class="container main-info-section">
+-->        <div class="text">
+        <h2>
+          <ul>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/members">Members</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </h2>
+  </nav>
 </header>
 
+
 <body>
-
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 style="color: aqua;">Sign Up Form</h2>
-
-
-
-        <br />
-        <div class="media">
-          <img src="..." class="align-self-start mr-3" alt="...">
-          <div class="media-body">
-            <h5 class="mt-0">Top-aligned media</h5>
-            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-              odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-              fringilla. Donec lacinia congue felis in faucibus.</p>
-            <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus mus.</p>
-          </div>
-
-        </div>
-
-      </div>
+    <div id="result">
     </div>
-  </div>
-
-
-
-
-
-
-
+      <section id="video">
+        
+      </section>
+      
+      
+      
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
+  <script type="text/javascript" src="/js/members.js"></script>
 
 </body>
-<!-- added a sticky footer -->
-<footer class="border-top footerborder">
-
-  <div class="col-md-12">
-
-    <div class="social-media container has-text-centered">
-      <a href="https://github.com/VeigarMain" target="_blank"><i class="fab fa-github-square fa-2x"
-          style="color:aqua;">Jake</i></a>
-      <a href="https://github.com/babedi3" target="_blank"><i class="fab fa-github-square fa-2x"
-          style="color: #444;">Brian</i></a>
-      <a href="https://github.com/rahmedy" target="_blank"><i class="fab fa-github-square fa-2x"
-          style="color:aqua;">Rayan</i></a>
-      <a href="https://github.com/mjstalzer" target="_blank"><i class="fab fa-github-square fa-2x"
-          style="color:#444;">Matt</i></a>
-    </div>
-    <span class="text-muted"><i class="fa fa-copyright" style="color: aliceblue;" aria-hidden="false"> Copyright </i>
-    </span>
 
 </html>
