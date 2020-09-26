@@ -5,20 +5,32 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
+  app.get("/", (req, res) => {
+  /*   if (req.user) {
+      res.redirect("/members");
+    } */
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
   app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/contact.html"));
-  });
-  app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
 
-    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+ /*  app.get("/login", (req, res) => {
+    // If the user already has an account send them to the members page
 
     res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
+  }); */
+
   app.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -28,4 +40,10 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+  app.get("/favorites", (req, res) => {
+  // If the user already has an account send them to the members page
+  
+  res.sendFile(path.join(__dirname, "../public/favorites.html"));
+});
 };
+

@@ -156,3 +156,7 @@ article {
 	margin-bottom: 10px;
 	padding: 10px 5px 10px 5px;
 }
+
+a.pressed-button {
+	background-color: red;
+}
