@@ -27,6 +27,9 @@ Rayan Ahmedy, Matthew Stalzer, Jake Battaglia and Brian Abedi
 Run the following command:
 ``` npm test ```
 
+## Deployment Links: 
+Heroku:https://vast-scrubland-76826.herokuapp.com/
+
 
 ## Contact 
 ahmedyrayan2020@gmail.com , mjstalzer@gmail.com , Jbaked12@gmail.com and babedi3@gatech.edu
