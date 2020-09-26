@@ -13,3 +13,11 @@ interestTwo VARCHAR(45) NOT NULL,
 interestThree VARCHAR(45) NOT NULL,
 PRIMARY KEY (id)
 )
+
+
+CREATE TABLE podcastActions (
+  id varchar(50) NOT NULL,
+  userId int NOT NULL,
+  likeDislike int NOT NULL,
+  PRIMARY KEY (id)
+)
