@@ -1,4 +1,7 @@
 # SocioPod
+
+## Deployment Links: 
+Heroku:https://vast-scrubland-76826.herokuapp.com/
       
     
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -26,9 +29,6 @@ Rayan Ahmedy, Matthew Stalzer, Jake Battaglia and Brian Abedi
 ## Tests
 Run the following command:
 ``` npm test ```
-
-## Deployment Links: 
-Heroku:https://vast-scrubland-76826.herokuapp.com/
 
 
 ## Contact 
