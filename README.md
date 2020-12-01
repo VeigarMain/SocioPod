@@ -32,5 +32,5 @@ Run the following command:
 
 
 ## Contact 
-ahmedyrayan2020@gmail.com , mjstalzer@gmail.com , Jbaked12@gmail.com and babedi3@gatech.edu
+rayanahmedy1999@gmail.com , mjstalzer@gmail.com , Jbaked12@gmail.com and babedi3@gatech.edu
 ##
